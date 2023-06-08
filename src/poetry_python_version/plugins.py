@@ -1,3 +1,5 @@
+import os
+
 from cleo.io.io import IO
 from poetry.plugins.plugin import Plugin
 from poetry.poetry import Poetry
@@ -7,6 +9,9 @@ class PythonVersionPlugin(Plugin):
     """Poetry plugin that loads .python-version file and sets the python dependency version in pyproject.toml"""
 
     def activate(self, poetry: Poetry, io: IO):
+        if not os.path.exists(".python-version"):
+            return
+
         io.write_line("Setting Python version from .python-version file")
         # show current python version
         io.write_line(f"Current Package Python versions: {poetry.package.python_versions}")
