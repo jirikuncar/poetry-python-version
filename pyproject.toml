@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "poetry-python-version"
-version = "0.0.2"
+version = "0.0.3"
 authors = ["Jiri Kuncar <jiri.kuncar@gmail.com>"]
 description = "Poetry plugin to read Python version from .python-version file"
 license = "MIT"
