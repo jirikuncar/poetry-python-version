@@ -57,6 +57,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          for file in dist/*; do
-            gh release upload "${{ github.event.release.tag_name }}" "$file"
-          done
+          gh release upload ${{ github.event.release.tag_name }} dist/*
