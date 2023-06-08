@@ -57,4 +57,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release upload ${{ github.event.release.tag_name }} dist/*
+          ls -l dist/*
+          gh release upload ${{ github.event.release.tag_name }} dist/* --repo ${{ github.repository }}
