@@ -19,10 +19,10 @@ jobs:
       - name: Build
         run: poetry build
       - name: Create artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: dist
-          path: dist
+          path: dist/
 
   publish-pypi:
     runs-on: ubuntu-latest
@@ -33,7 +33,7 @@ jobs:
       id-token: write
     steps:
       - name: Load artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: dist
       - name: Publish package distributions to PyPI
@@ -48,7 +48,7 @@ jobs:
       contents: write
     steps:
       - name: Load artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: dist
       - name: Upload dist files to release
