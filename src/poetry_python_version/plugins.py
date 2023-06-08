@@ -16,7 +16,7 @@ class PythonVersionPlugin(Plugin):
         # show current python version
         io.write_line(f"Current Package Python versions: {poetry.package.python_versions}")
         io.write_line(f'Current PyProject dependencies Python: '
-                      f'{poetry.pyproject.data["tool"]["poetry"]["dependencies"]["python"]}')
+                      f'{poetry.pyproject.data["tool"]["poetry"].get("dependencies", {}).get("python")}')
 
         with open(".python-version") as f:
             version = f.read().strip()

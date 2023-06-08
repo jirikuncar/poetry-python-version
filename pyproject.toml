@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "poetry-python-version"
-version = "0.0.3"
+version = "0.0.4"
 authors = ["Jiri Kuncar <jiri.kuncar@gmail.com>"]
 description = "Poetry plugin to read Python version from .python-version file"
 license = "MIT"
@@ -10,7 +10,6 @@ repository = "https://github.com/jirikuncar/poetry-python-version"
 packages = [{include = "poetry_python_version", from = "src"}]
 
 [tool.poetry.dependencies]
-python = "^3.7"
 poetry = "^1.5"
 
 [build-system]
