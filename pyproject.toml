@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "poetry-python-version"
+version = "0.0.1"
+authors = ["Jiri Kuncar <jiri.kuncar@gmail.com>"]
+description = "Poetry plugin to read Python version from .python-version file"
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/jirikuncar/poetry-python-version"
+repository = "https://github.com/jirikuncar/poetry-python-version"
+packages = [{include = "poetry_python_version", from = "src"}]
+
+[tool.poetry.dependencies]
+poetry = "^1.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.plugins."poetry.plugin"]
+poetry_python_version = "poetry_python_version.plugins:PythonVersionPlugin"
+
+[tool.ruff]
+fix = true
+unfixable = [
+    "ERA", # do not autoremove commented out code
+]
+target-version = "py37"
+line-length = 120
+extend-select = [
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "ERA", # flake8-eradicate/eradicate
+    "I",   # isort
+    "N",   # pep8-naming
+    "PIE", # flake8-pie
+    "PGH", # pygrep
+    "RUF", # ruff checks
+    "SIM", # flake8-simplify
+    "TCH", # flake8-type-checking
+    "TID", # flake8-tidy-imports
+    "UP",  # pyupgrade
+]
+extend-exclude = [
+    "docs/*",
+    # External to the project's coding standards
+    "tests/**/fixtures/*",
+]
+
+[tool.ruff.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[tool.ruff.isort]
+force-single-line = true
+lines-between-types = 1
+lines-after-imports = 2
+known-first-party = ["poetry_python_version"]
