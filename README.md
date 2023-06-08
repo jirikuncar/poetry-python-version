@@ -14,7 +14,14 @@ pipx inject poetry poetry-python-version
 
 ## Usage
 
-When correctly installed you will see:
+If you are using `.python-version` file you might want to set the python
+version for the project automatically. This plugin does exactly that.
+
+It targets application developers that don't want to define Python version
+in multiple places and their preferred way is to use `.python-version` file.
+
+Once you have correctly installed this plugin and your project contains
+`.python-version` file you will see following output when you run `poetry install`:
 
 ```
 Setting Python version from .python-version file
