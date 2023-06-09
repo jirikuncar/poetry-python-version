@@ -15,10 +15,24 @@ pipx inject poetry poetry-python-version
 ## Usage
 
 If you are using `.python-version` file you might want to set the python
-version for the project automatically. This plugin does exactly that.
+version for the project automatically. This Poetry plugin does exactly that.
+
+**`pyproject.toml`**
+```toml
+# ...
+[tool.poetry.dependencies]
+python = "3.11.*"
+poetry = "^1.5"
+# ...
+```
 
 It targets application developers that don't want to define Python version
 in multiple places and their preferred way is to use `.python-version` file.
+
+**`.python-version`**
+```
+3.11.3
+```
 
 Once you have correctly installed this plugin and your project contains
 `.python-version` file you will see following output when you run `poetry install`:
