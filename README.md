@@ -50,5 +50,5 @@ New PyProject dependencies Python: 3.11.3
 Long TODO list
 
 - [ ] tests
-- [ ] configuration options
+- [ ] configuration options - use opt-in rather then always enabled
 - [ ] documentation
